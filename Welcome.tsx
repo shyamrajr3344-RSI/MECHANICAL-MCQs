@@ -8,7 +8,7 @@ interface WelcomeProps {
 
 const Welcome: React.FC<WelcomeProps> = ({ onStart, examPart, studentName }) => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4 text-center animate-fade-in">
+    <div className="flex flex-col items-center justify-center min-h-[100dvh] p-4 text-center animate-fade-in bg-gray-50">
       <div className="max-w-2xl w-full bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
         <div className="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -47,7 +47,7 @@ const Welcome: React.FC<WelcomeProps> = ({ onStart, examPart, studentName }) => 
 
         <button
           onClick={onStart}
-          className="w-full md:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition duration-200 transform hover:scale-105 shadow-lg shadow-blue-200"
+          className="w-full md:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition duration-200 transform hover:scale-105 shadow-lg shadow-blue-200 active:scale-95"
         >
           Start Exam {examPart}
         </button>

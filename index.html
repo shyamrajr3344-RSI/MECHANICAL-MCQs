@@ -2,13 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="theme-color" content="#2563EB" />
+    <meta property="og:title" content="Fluid Mechanics MCQ Practice" />
+    <meta property="og:description" content="MET 308 Comprehensive Course Work - Mechanical Engineering (2019 Scheme)" />
+    <meta property="og:type" content="website" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3063/3063822.png" />
     <title>Fluid Mechanics MCQ Practice</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
       body {
         font-family: 'Inter', sans-serif;
+        -webkit-tap-highlight-color: transparent;
       }
       @keyframes fadeIn {
         from { opacity: 0; transform: translateY(10px); }
@@ -32,7 +39,7 @@
 </script>
   <link rel="stylesheet" href="/index.css">
 </head>
-  <body class="bg-gray-50 text-slate-800 antialiased">
+  <body class="bg-gray-50 text-slate-800 antialiased select-none">
     <div id="root"></div>
   <script type="module" src="/index.tsx"></script>
 </body>

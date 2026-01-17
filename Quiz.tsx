@@ -43,7 +43,7 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete }) => {
   const progress = ((Object.keys(answers).length) / questions.length) * 100;
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-[100dvh] bg-gray-50 flex flex-col">
       {/* Header */}
       <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
@@ -79,7 +79,7 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete }) => {
                 <button
                   key={index}
                   onClick={() => handleOptionSelect(index)}
-                  className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-200 flex items-start group ${
+                  className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-200 flex items-start group active:scale-[0.99] ${
                     isSelected
                       ? 'border-blue-500 bg-blue-50'
                       : 'border-gray-200 hover:border-blue-200 hover:bg-gray-50'
@@ -107,14 +107,14 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete }) => {
         </div>
 
         {/* Navigation */}
-        <div className="flex justify-between items-center gap-4">
+        <div className="flex justify-between items-center gap-4 pb-8">
           <button
             onClick={() => setCurrentQuestionIndex((prev) => Math.max(0, prev - 1))}
             disabled={currentQuestionIndex === 0}
             className={`px-6 py-3 rounded-xl font-medium transition-colors ${
               currentQuestionIndex === 0
                 ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
-                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 shadow-sm'
+                : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 shadow-sm active:bg-gray-200'
             }`}
           >
             Previous
@@ -123,14 +123,14 @@ const Quiz: React.FC<QuizProps> = ({ questions, onComplete }) => {
           {currentQuestionIndex === questions.length - 1 ? (
             <button
               onClick={() => onComplete(answers, 50 * 60 - timeLeft)}
-              className="px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl shadow-lg shadow-green-200 transition-transform transform hover:scale-105"
+              className="px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-xl shadow-lg shadow-green-200 transition-transform transform hover:scale-105 active:scale-95"
             >
               Submit Exam
             </button>
           ) : (
             <button
               onClick={() => setCurrentQuestionIndex((prev) => Math.min(questions.length - 1, prev + 1))}
-              className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-200 transition-transform transform hover:scale-105"
+              className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-200 transition-transform transform hover:scale-105 active:scale-95"
             >
               Next
             </button>
